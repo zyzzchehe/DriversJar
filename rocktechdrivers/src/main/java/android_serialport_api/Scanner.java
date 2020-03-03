@@ -26,15 +26,11 @@ public class Scanner implements SerialPort.onDataReceivedListener {
 
 
     public Scanner(String portPath, int baudrate) throws Exception {
-        start = new byte[]{0x1a, 0x54, 0x0d};
-        stop = new byte[]{0x1a, 0x55, 0x0d};
         scanSerialPort = new SerialPort(new File(portPath), baudrate, 0, this);
         initHandler();
     }
 
     public Scanner(String portPath) throws Exception {
-        start = new byte[]{0x1a, 0x54, 0x0d};
-        stop = new byte[]{0x1a, 0x55, 0x0d};
         scanSerialPort = new SerialPort(new File(portPath), Constant.SCANNER_baudrate, 0, this);
         initHandler();
     }
@@ -65,6 +61,8 @@ public class Scanner implements SerialPort.onDataReceivedListener {
 
 
     private void initHandler() {
+        start = new byte[]{22, 84, 13};
+        stop = new byte[]{22, 85, 13};
         commonDataObservable = new CommonDataObservable();
         handlerThread = new HandlerThread();
         handlerThread.start();
