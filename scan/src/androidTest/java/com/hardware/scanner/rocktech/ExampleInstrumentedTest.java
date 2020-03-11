@@ -1,4 +1,4 @@
-package com.rocktech.drivers;
+package com.hardware.scanner.rocktech;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.rocktech.drivers", appContext.getPackageName());
+        assertEquals("com.hardware.scanner.rocktech.test", appContext.getPackageName());
     }
 }

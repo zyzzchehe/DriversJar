@@ -1,2 +1,4 @@
-include ':app', ':rocktechdrivers'
+include ':app'
 rootProject.name='Drivers'
+include ':scan'
+include ':print'
